@@ -1,12 +1,12 @@
+import Footer from '@components/Layout/ClientLayout/Footer';
 import Navbar from '@components/Layout/ClientLayout/Navbar';
-import News from '@components/Layout/ClientLayout/News';
 import type { NextPage } from 'next';
 
 const HomePage: NextPage = () => {
   return (
     <>
       <Navbar />
-      <News />
+      <Footer />
     </>
   );
 };
