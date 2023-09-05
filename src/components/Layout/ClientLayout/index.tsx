@@ -1,4 +1,5 @@
 import { Box } from '@chakra-ui/react';
+import Navbar from './Navbar';
 
 type Props = {
   children?: React.ReactNode;
@@ -7,7 +8,9 @@ type Props = {
 const ClientLayout = ({ children }: Props) => {
   return (
     <>
+      <Navbar />
       <Box>{children}</Box>
+      {/* <Footer /> */}
     </>
   );
 };
