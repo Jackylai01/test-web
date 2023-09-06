@@ -33,8 +33,6 @@ const News = () => {
             <span>{newsItem.category}</span>
           </section>
           <div className='news__content'>
-            {' '}
-            {/* 新增這個 div */}
             <span className='news__date'>{newsItem.date}</span>
             <h4 className='news__title'>{newsItem.title}</h4>
             <p className='news__content-text'>{newsItem.content}</p>

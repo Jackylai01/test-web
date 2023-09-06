@@ -62,7 +62,7 @@ const Activity = () => {
             key={index}
             className={`activity__card activity__card--${act.category}`}
           >
-            <h2 className='activity__card-header'>{act.title}</h2>
+            <h2 className='activity__card-header'>{act.category}</h2>
             <span className='activity__card-content'>
               <h2 className='activity__card-name'>{act.name}</h2>
               <p className='activity__card-date'>{act.date}</p>
