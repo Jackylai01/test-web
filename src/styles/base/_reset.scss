@@ -142,8 +142,10 @@ ul li {
 *:before,
 *:after {
   box-sizing: border-box;
+  font-family: 'Noto Sans TC', sans-serif;
 }
 
 a {
   text-decoration: none;
+  color: inherit;
 }

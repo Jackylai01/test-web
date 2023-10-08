@@ -1,81 +1,54 @@
 .main {
-  flex: 1;
+  flex-wrap: wrap;
+  margin-top: $margin_small;
+  flex: 0 0 70%;
+  @extend %layout-container;
+  @extend %flex-row;
 
   &__container {
-    position: relative;
-    padding: $padding_big 0;
+    flex: 0 0 60%;
+    @include pc-width() {
+      flex-direction: column;
 
-    @extend %layout-container;
-
-    &--paper {
-      margin-top: -10px;
-      margin-bottom: 40px;
-      padding: $padding_base;
-      background-color: $color_white;
-      box-shadow: $box-shadow_element;
+      &__container,
+      &__aside {
+        flex: 0 0 auto;
+        width: 100%;
+      }
+    }
+    &--full {
+      margin: 0 10%;
 
       @include phone-width() {
-        padding: 30px $padding_small;
+        margin: unset;
       }
     }
+  }
 
-    // 設置有 aside 的 container
-    &--aside-layout {
-      @extend %flex-row-wrap;
-
-      .tab-list,
-      .article-block {
-        flex: 1;
-        margin-right: 20px;
-        @include phone-width {
-          margin-right: 0;
-        }
-      }
-    }
-
-    // 設置 container 為滿版區塊
-    &--full {
-      @extend %layout-container-padding;
-    }
-
-    // 設置 container 背景色為主色
-    &--primary {
-      background-color: $color_primary;
+  &__vertical-axis {
+    min-height: 100vh;
+    @include pad-under-width() {
+      min-height: 0vh;
     }
   }
 
   &__aside {
-    flex: 0 0 17.5rem;
-    border-left: $color_line solid 1px;
-  }
+    margin-top: -20px;
+    margin-left: $margin_small;
+    width: 340px;
+    height: 500px;
 
-  // 展示文字與圖片用
-  &__info-show {
-    text-align: center;
-
-    h1 {
-      color: $color_accent;
-      letter-spacing: 20px;
-      font-size: 4rem;
-    }
-
-    img {
-      max-width: 40rem;
-      width: 100%;
+    @include phone-width() {
+      margin-top: $margin_small;
+      margin-left: unset;
     }
   }
 
-  &--page-loading {
-    position: fixed;
-    z-index: 1000;
-    width: 100%;
-    height: 100%;
-    background-color: $color_white;
-
+  &__horizontal {
     @extend %flex-center;
-  }
-
-  &--white-bg {
-    background-color: $color_white;
+    @include pad-under-width() {
+      display: flex;
+      flex-direction: column;
+    }
   }
 }

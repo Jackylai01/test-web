@@ -46,6 +46,6 @@
   &:hover,
   &.active {
     background-color: $color;
-    color: $color_white !important;
+    color: $color_white;
   }
 }

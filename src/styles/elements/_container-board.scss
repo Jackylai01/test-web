@@ -1,0 +1,246 @@
+.container-board {
+  position: relative;
+  margin-bottom: 2rem;
+  min-width: 50%;
+
+  @extend %flex-column-center;
+
+  &__content {
+    padding: $padding_small;
+    position: relative;
+    z-index: $z-index_base;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    overflow: hidden;
+    width: 100%;
+    min-height: 750px;
+    min-width: 860px;
+
+    @include pad-under-width {
+      min-height: 700px;
+      min-width: 800px;
+    }
+
+    @include phone-width {
+      width: 100vw;
+      min-width: 0;
+      min-height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &__news-title {
+    position: absolute;
+    top: 0;
+    transform: translateX(-80%);
+    transform: translateY(10%);
+    z-index: $z-index_base + 1;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 5px;
+
+    @media screen and (max-width: 1325px) and (min-width: 1080px) {
+      top: 0;
+      font-size: 1.75rem;
+      transform: translateY(30%);
+    }
+
+    @media screen and (max-width: 1080px) and (min-width: 865px) {
+      top: 0;
+      font-size: 1.75rem;
+      transform: translateY(10%);
+    }
+
+    @include phone-width {
+      font-size: 1rem;
+      transform: translateY(30%);
+    }
+  }
+
+  &__single-news {
+    position: absolute;
+    top: 0;
+    transform: translateX(-80%);
+    transform: translateY(0%);
+    z-index: $z-index_base + 1;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 5px;
+
+    @media screen and (max-width: 1325px) and (min-width: 1080px) {
+      top: 0;
+      transform: translateY(0%);
+    }
+
+    @include pad-under-width {
+      transform: translateY(30%);
+    }
+    @include phone-width {
+      transform: translateY(30%);
+    }
+  }
+
+  &__main-title {
+    position: absolute;
+    top: 0;
+    transform: translateX(-80%);
+    transform: translateY(10%);
+    z-index: $z-index_base + 1;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 5px;
+
+    @media screen and (max-width: 1325px) and (min-width: 1080px) {
+      top: 0;
+      font-size: 1.75rem;
+      transform: translateY(100%);
+    }
+
+    @media screen and (max-width: 1080px) and (min-width: 865px) {
+      top: 1%;
+      font-size: 1.75rem;
+      transform: translateY(1%);
+    }
+
+    @include phone-width {
+      top: 0;
+      font-size: 1.5rem;
+      transform: translateY(20%);
+    }
+
+    @include phone-small-width() {
+      font-size: 1.25rem;
+      transform: translateY(100%);
+    }
+  }
+
+  &__body {
+    position: relative;
+    overflow: hidden;
+    min-height: 300px;
+    width: 100%;
+    border-radius: 20px;
+
+    @extend %flex-center;
+  }
+
+  &__hint {
+    color: $color_accent;
+
+    @extend %flex-center;
+
+    &::before,
+    &::after {
+      flex: 1;
+      margin: auto 20px;
+      border-bottom: 2px dashed $color_auxiliary;
+      content: '';
+    }
+  }
+
+  &__story {
+    padding: 100px;
+    position: relative;
+    z-index: $z-index_base;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    min-height: 900px;
+    max-width: 1080px;
+    font-size: 1rem;
+    @extend %flex-center;
+
+    @include pad-under-width {
+      background-size: cover;
+      min-height: 800px;
+      max-width: 900px;
+      padding: 80px;
+    }
+    @include phone-width {
+      font-size: 0.75rem;
+      min-height: 300px;
+      padding: 60px 50px;
+    }
+  }
+
+  &__faq {
+    padding: 100px;
+    position: relative;
+    z-index: $z-index_base;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    min-height: 960px;
+    max-width: 1200px;
+    font-size: 1rem;
+    @extend %flex-center;
+
+    @include pad-under-width {
+      background-size: cover;
+      display: block;
+    }
+    @include phone-width {
+      min-height: 550px;
+      width: 100%;
+    }
+  }
+
+  &__multimedia {
+    min-height: 900px;
+    min-width: 1080px;
+    position: relative;
+    z-index: $z-index_base;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    font-size: 2rem;
+    @extend %flex-center;
+    flex-direction: column;
+
+    @include pad-under-width {
+      background-size: contain;
+      min-height: 800px;
+      max-width: 500px;
+      font-size: 1.75rem;
+    }
+    @include phone-width {
+      min-height: 700px;
+      padding: 5rem;
+      font-size: 0.85rem;
+    }
+  }
+
+  &__news-detail {
+    padding: 100px;
+    position: relative;
+    z-index: $z-index_base;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    min-height: 960px;
+    width: 1200px;
+    font-size: 1rem;
+    @extend %flex-center;
+
+    @include pad-under-width {
+      background-size: cover;
+    }
+    @include phone-width {
+      min-height: 550px;
+      width: 100%;
+    }
+  }
+
+  &-alone {
+    width: 80%;
+    margin: auto;
+    @extend %flex-center;
+
+    @include pad-under-width {
+      width: 100%;
+    }
+  }
+}

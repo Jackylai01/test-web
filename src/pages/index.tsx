@@ -1,7 +1,61 @@
-import type { NextPage } from 'next';
+import ContainerBoard from '@components/ContainerBoard';
+import FacebookAside from '@components/FacebookAside';
+import Pagination from '@components/Pagination';
+import { newsList } from '@fixtures/news';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
-const HomePage: NextPage = () => {
-  return <></>;
-};
+export default function HomePage() {
+  const [isMobile, setIsMobile] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = isMobile ? 5 : 10;
+  const totalPages = Math.ceil(newsList.length / itemsPerPage);
 
-export default HomePage;
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 556);
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const displayedNews = newsList.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage,
+  );
+
+  return (
+    <>
+      <article>
+        <main className='main__horizontal'>
+          <ContainerBoard
+            title='最新消息'
+            titleClassName='news-title'
+            contentClassName='content'
+          >
+            <ul className='line-list'>
+              {displayedNews.map(({ _id, title, createAt }) => (
+                <li key={_id}>
+                  <Link href={`/news/${_id}`}>
+                    <a>
+                      {createAt}
+                      {title}
+                    </a>
+                  </Link>
+                </li>
+              ))}
+              <Pagination
+                currentPage={currentPage}
+                totalPages={totalPages}
+                onPageChange={setCurrentPage}
+              />
+            </ul>
+          </ContainerBoard>
+          <FacebookAside />
+        </main>
+      </article>
+    </>
+  );
+}

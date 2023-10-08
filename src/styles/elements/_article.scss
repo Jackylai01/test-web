@@ -1,0 +1,6 @@
+.article {
+  > p {
+    padding-bottom: $padding_small;
+    text-indent: 2em;
+  }
+}

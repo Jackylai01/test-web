@@ -1,0 +1,12 @@
+.competition {
+  position: relative;
+  top: 30px;
+  margin: 0 auto;
+  cursor: pointer;
+  margin-top: 5rem 0rem;
+  @extend %flex-center;
+
+  > section {
+    position: absolute;
+  }
+}

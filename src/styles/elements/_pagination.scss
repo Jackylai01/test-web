@@ -1,0 +1,15 @@
+.pagination {
+  gap: $row-size_col-margin-small;
+  margin-top: $margin_base;
+  z-index: 500;
+
+  @extend %flex-center;
+  > button {
+    border: none;
+    cursor: pointer;
+
+    @include phone-width {
+      font-size: clamp(6px, 0.25rem, 8px);
+    }
+  }
+}

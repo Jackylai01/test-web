@@ -1,83 +1,36 @@
-.btn {
-  padding: $block-padding_small;
-  border: none;
-  border-radius: $border-radius_layout;
-  color: $color_white;
-  text-align: center;
-  text-decoration: none;
-  font-size: 0.9rem;
-  cursor: pointer;
+.access-key {
+  position: relative;
 
-  @extend %inline-flex-center;
-  @include hoverBackgroundTransition(
-    $color_accent,
-    darken($color: $color_accent, $amount: 10)
-  );
-
-  > span {
-    margin-right: 5px;
-    font-size: 1rem;
+  @include pad-under-width() {
+    display: none;
   }
 
-  &--small {
-    padding: 10px 20px;
-    border-radius: $radius-size_base;
-    font-size: 0.9rem;
+  > a {
+    position: absolute;
+    top: 0;
+    left: calc(10% - 40px);
+    color: $color_black;
   }
 
-  &--large {
-    padding: 15px 40px;
-    font-size: 1rem;
-  }
+  &__go-to-main {
+    position: absolute;
+    top: $margin_small;
+    left: $margin_small;
+    z-index: $z-index_base;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    border-radius: $border-radius_layout;
 
-  &--full {
-    width: 100%;
-  }
+    @include pad-under-width() {
+      display: none;
+    }
 
-  &--radius {
-    border-radius: $radius-size_big * 2;
-  }
-
-  &--auxiliary {
-    @include hoverBackgroundTransition($color_auxiliary-light);
-  }
-
-  &--notice {
-    @include hoverBackgroundTransition($color_notice);
-  }
-
-  &--security {
-    @include hoverBackgroundTransition($color_security);
-  }
-
-  &--like {
-    @include hoverBackgroundTransition($color_like);
-  }
-
-  &--danger {
-    @include hoverBackgroundTransition(
-      $color_like,
-      darken($color: $color_like, $amount: 10)
-    );
-  }
-
-  &--accent-border {
-    @include hoverActiveBorderBgTransition($color_accent);
-  }
-
-  &--auxiliary-border {
-    @include hoverActiveBorderBgTransition($color_auxiliary-light);
-  }
-
-  &--notice-border {
-    @include hoverActiveBorderBgTransition($color_notice);
-  }
-
-  &--security-border {
-    @include hoverActiveBorderBgTransition($color_security);
-  }
-
-  &--danger-border {
-    @include hoverActiveBorderBgTransition($color_like);
+    &:focus,
+    &:hover {
+      padding: $padding_small;
+      width: auto;
+      height: auto;
+    }
   }
 }

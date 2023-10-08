@@ -1,8 +1,9 @@
 // RWD size
 $XL-media: 1760px;
-$L-media: 1240px;
-$M-media: 920px;
+$L-media: 1280px;
+$M-media: 1080px;
 $S-media: 556px;
+$XS-media: 280px;
 
 // 1760px> Display
 @mixin XLpc-width() {
@@ -18,21 +19,28 @@ $S-media: 556px;
   }
 }
 
-// 1240px~920px Display */
+// 1240px~860px Display */
 @mixin pc-width() {
   @media all and (max-width: $L-media) and (min-width: $M-media) {
     @content;
   }
 }
 
-// 920px~556px Display
+// 860px~556px Display
 @mixin pad-width() {
   @media all and (max-width: $M-media) and (min-width: $S-media) {
     @content;
   }
 }
 
-// 920px~0 Display
+// 1240px~0 Display
+@mixin pc-under-width() {
+  @media all and (max-width: $L-media) {
+    @content;
+  }
+}
+
+// 860px~0 Display
 @mixin pad-under-width() {
   @media all and (max-width: $M-media) {
     @content;
@@ -42,6 +50,13 @@ $S-media: 556px;
 // 556px~0 Display
 @mixin phone-width() {
   @media all and (max-width: $S-media) {
+    @content;
+  }
+}
+
+// 280px~0 Display(Galaxy Fold)
+@mixin phone-small-width() {
+  @media all and (max-width: $XS-media) {
     @content;
   }
 }

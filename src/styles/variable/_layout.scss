@@ -1,18 +1,13 @@
 $max-width_container: 1200px;
 
-$width_container--big: 90%;
-$width_container: 85%;
-$width_container--small: 75%;
+$width_container--big: 85%;
+$width_container: 80%;
+$width_container--small: 70%;
 
 $width_login-aside: 460px;
 $width_main-aside: 260px;
-$width_navbar-logo-bar: 100px;
 
 $height_header: 80px;
-$height_navbar: 80px;
-$height_header-banner: 460px;
-$height_page-header-banner: 240px;
-$height_banner: 400px;
 $height_manager-footer: 50px;
 $height_manager-actions: 70px;
 
@@ -41,7 +36,7 @@ $z-index_base: 10;
 $z-index_front: 100;
 $z-index_cover: 1000;
 
-$border-radius_layout: 8px;
+$border-radius_layout: 12px;
 
 // 30px 50px
 $block-padding_big: $padding_base $padding_big;

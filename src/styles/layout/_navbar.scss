@@ -1,62 +1,208 @@
 .navbar {
-  display: flex;
-  justify-content: space-between;
+  padding: 0rem 2rem;
+  color: $color_white;
+  font-family: 'Noto Sans TC', sans-serif;
   align-items: center;
-  font-size: 1rem;
-  padding: 1rem 2rem;
-  border-bottom: 1px solid black;
+
+  @extend %flex-row-between;
 
   &__logo {
-    cursor: pointer;
+    > a {
+      cursor: pointer;
+    }
+  }
+
+  &__visits {
+    position: absolute;
+    left: 50px;
   }
 
   &__hamburger {
     display: none;
     cursor: pointer;
-    @media (max-width: 768px) {
+    @include pad-under-width {
       display: block;
+    }
+  }
+
+  > a {
+    margin-top: -15px;
+    .login-image {
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: rotate(-10deg);
+      }
     }
   }
 
   &__items {
     display: flex;
-    gap: 1rem;
+    font-size: clamp(12px, 1.25rem, 20px);
+    gap: 1.5rem;
 
-    @media (max-width: 768px) {
+    @include pad-under-width {
       display: none;
+    }
+  }
+
+  &__dropdown-container {
+    position: relative;
+
+    &:hover {
+      .navbar__dropdown {
+        display: block;
+      }
+    }
+  }
+
+  &__dropdown-item-container {
+    position: relative;
+  }
+
+  &__dropdown {
+    width: max-content;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+
+    &-item-container {
+      position: relative;
+
+      &:hover {
+        .navbar__dropdown--sub {
+          display: block;
+        }
+      }
+    }
+    &-item {
+      padding: 8px 12px;
+      color: $color_white;
+      transition: background-color 0.3s;
+      white-space: nowrap;
+      &:hover {
+        background-color: darken(rgba(0, 0, 0, 0.3), 10%);
+        border-radius: 10px;
+        border: 2px solid $color_line-light;
+      }
+    }
+
+    &--sub {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 100%;
+      flex-direction: column;
+
+      &-item {
+        padding: 8px 12px;
+        color: $color_white;
+        white-space: nowrap;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: darken(rgba(0, 0, 0, 0.3), 10%);
+          border-radius: 10px;
+          border: 2px solid $color_line-light;
+        }
+      }
+    }
+  }
+
+  &__sub-dropdown {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+
+    .navbar__dropdown-item-container:hover & {
+      display: block;
+    }
+  }
+
+  &__sub-dropdown-item {
+    padding: 8px 12px;
+    color: $color_white;
+    white-space: nowrap;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: darken(rgba(0, 0, 0, 0.3), 10%);
+      border-radius: 10px;
+      border: 2px solid $color_line-light;
     }
   }
 
   &__item {
     cursor: pointer;
+    font-weight: 600;
 
     &:hover {
       text-decoration: underline;
+    }
+
+    &-arrow {
+      font-size: 0.25rem;
+      margin-left: 5px;
     }
   }
 
   &__drawer {
     position: fixed;
     top: 0;
-    left: -50%;
-    width: 50%;
+    left: -70%;
+    width: 70%;
     height: 100%;
-    background-color: black;
+    background-color: $color_black;
     overflow-y: auto;
-    transition: transform 0.5s;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    transition: transform 0.3s, opacity 0.3s;
     z-index: 1000;
+    @extend %flex-column-center-center;
 
-    & .navbar__item {
-      color: white;
+    &-dropdown-item {
+      display: block;
+      padding-left: 30px;
+      color: $color_white;
+      margin: 0.75rem 0rem;
+    }
+
+    &.active {
+      transform: rotate(90deg);
+      opacity: 0.8;
+    }
+
+    &__item {
+      color: $color_white;
       margin: 0.5rem 0;
+    }
+
+    &-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      font-size: 1.5rem;
+      z-index: 10;
     }
 
     &--active {
       transform: translateX(100%);
     }
+  }
+
+  &__campus-prelims {
+    margin-left: 1.25rem;
+  }
+  &__campus-finals {
+    margin-left: 1.25rem;
   }
 }

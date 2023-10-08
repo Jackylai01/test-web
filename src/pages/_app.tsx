@@ -1,24 +1,38 @@
-import { ChakraProvider } from '@chakra-ui/react';
-import Layout from '@components/Layout';
-import { theme } from '@fixtures/theme';
-import wrapper from '@store';
+import Carousel from '@components/Carousel';
+import Footer from '@components/Footer';
+import Navbar from '@components/Navbar';
 import '@styles/globals.scss';
-import type { AppProps } from 'next/app';
+import { AppProps } from 'next/app';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
+  const router = useRouter();
+
+  const showCarousel = [
+    '/',
+    '/activity/story',
+    '/activity/character',
+    '/contact',
+    '/faq',
+    '/download',
+    '/multimedia/gallery',
+    '/multimedia/video',
+    '/competition-method/skill',
+    '/news/[id]',
+  ].includes(router.route);
+
   return (
     <>
       <Head>
-        <title>攝影作品集</title>
+        <title>2024 新北小學堂電競王</title>
       </Head>
-      <ChakraProvider theme={theme}>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </ChakraProvider>
+      <Navbar />
+      {showCarousel && <Carousel />}
+      <Component {...pageProps} />
+      <Footer />
     </>
   );
 };
 
-export default wrapper.withRedux(MyApp);
+export default MyApp;

@@ -1,0 +1,46 @@
+.line-list {
+  padding: 100px;
+  cursor: pointer;
+  max-height: calc(100% - 2 * 0px);
+  overflow-y: auto;
+
+  @include phone-width {
+    padding: 0px;
+  }
+
+  > li {
+    border-bottom: 0.5px solid $color_accent;
+    @include layoutSpaceBottom($margin_small);
+    @include phone-width {
+      font-size: 0.95rem;
+    }
+  }
+
+  &__title {
+    color: $color_accent;
+    font-size: 1.25rem;
+  }
+
+  &__gallery {
+    font-size: 1.5rem;
+    > li {
+      padding: 1.5rem;
+      border-bottom: 1px solid $color_black;
+    }
+    @include phone-width {
+      font-size: 1rem;
+    }
+  }
+
+  &__video {
+    font-size: 1.5rem;
+    > li {
+      padding: 1rem;
+      border-bottom: 1px solid $color_black;
+    }
+
+    @include phone-width {
+      font-size: 1rem;
+    }
+  }
+}

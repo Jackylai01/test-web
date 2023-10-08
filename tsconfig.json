@@ -30,9 +30,9 @@
       "@store/*": ["src/store/*"],
       "@styles/*": ["src/styles/*"],
       "@public/*": ["public/*"],
-      "@images/*": ["public/images/*"]
+      "@images/*": ["public/Images/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/helpers/game.js"],
   "exclude": ["node_modules"]
 }
