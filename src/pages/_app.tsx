@@ -26,6 +26,10 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     <>
       <Head>
         <title>2024 新北小學堂電競王</title>
+        <meta
+          name='viewport'
+          content='width=device-width, initial-scale=1'
+        ></meta>
       </Head>
       <Navbar />
       {showCarousel && <Carousel />}

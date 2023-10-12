@@ -5,19 +5,18 @@ import { useState } from 'react';
 
 const PersonalPage: NextPage = () => {
   const [BackgroundLong, setBackgroundLong] = useState(
-    '/Images/ContainerBoard/board-long.png',
+    '/Images/Multimedia/個人戰.png',
   );
 
   return (
     <>
       <main className='multimedia'>
         <article className='multimedia__container'>
-          <div
+          <header
             className='multimedia__container-personal-img'
             style={{ backgroundImage: `url(${BackgroundLong})` }}
           >
             <section className='multimedia__container-personal-img--personal'>
-              <h2>個人戰</h2>
               <p>
                 1.參賽資格：具有新北市親師生平台之會員，不限年齡與性別皆可參與。
               </p>
@@ -69,7 +68,7 @@ const PersonalPage: NextPage = () => {
                 <p>13.獎項資訊請參考競賽實施計畫。</p>
               </span>
             </section>
-          </div>
+          </header>
         </article>
       </main>
     </>

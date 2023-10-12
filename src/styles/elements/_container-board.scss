@@ -12,14 +12,28 @@
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    overflow: hidden;
     width: 100%;
     min-height: 750px;
     min-width: 860px;
 
+    &::before {
+      content: '最 新 消 息';
+      position: absolute;
+      left: 43%;
+      font-size: 1.5rem;
+      color: $color_white;
+    }
+
     @include pad-under-width {
       min-height: 700px;
       min-width: 800px;
+
+      &::before {
+        content: '最新消息';
+        position: absolute;
+        left: 45%;
+        font-size: 1.5rem;
+      }
     }
 
     @include phone-width {
@@ -29,34 +43,13 @@
       display: flex;
       align-items: center;
       justify-content: center;
-    }
-  }
 
-  &__news-title {
-    position: absolute;
-    top: 0;
-    transform: translateX(-80%);
-    transform: translateY(10%);
-    z-index: $z-index_base + 1;
-    font-size: 2rem;
-    font-weight: 600;
-    letter-spacing: 5px;
-
-    @media screen and (max-width: 1325px) and (min-width: 1080px) {
-      top: 0;
-      font-size: 1.75rem;
-      transform: translateY(30%);
-    }
-
-    @media screen and (max-width: 1080px) and (min-width: 865px) {
-      top: 0;
-      font-size: 1.75rem;
-      transform: translateY(10%);
-    }
-
-    @include phone-width {
-      font-size: 1rem;
-      transform: translateY(30%);
+      &::before {
+        content: '最新消息';
+        top: 1%;
+        left: 42%;
+        font-size: 1.25rem;
+      }
     }
   }
 
@@ -92,7 +85,7 @@
     font-size: 2rem;
     font-weight: 600;
     letter-spacing: 5px;
-
+    color: $color_white;
     @media screen and (max-width: 1325px) and (min-width: 1080px) {
       top: 0;
       font-size: 1.75rem;
@@ -167,28 +160,49 @@
   }
 
   &__faq {
-    padding: 100px;
+    padding: 70px;
     position: relative;
     z-index: $z-index_base;
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: contain;
+    background-size: cover;
     min-height: 960px;
     max-width: 1200px;
     font-size: 1rem;
     @extend %flex-center;
 
+    &::before {
+      content: '常 見 問 題';
+      position: absolute;
+      top: 0;
+      left: 43.5%;
+      font-size: 2rem;
+      color: $color_white;
+    }
+
+    @media screen and (max-width: 1420px) and (min-width: 1080px) {
+      &::before {
+        top: 1%;
+      }
+    }
     @include pad-under-width {
-      background-size: cover;
-      display: block;
+      &::before {
+        top: 2%;
+        left: 42%;
+      }
     }
     @include phone-width {
       min-height: 550px;
       width: 100%;
+      &::before {
+        top: 2%;
+        left: 40%;
+        font-size: 1.25rem;
+      }
     }
   }
 
-  &__multimedia {
+  &__multimedia-photo {
     min-height: 900px;
     min-width: 1080px;
     position: relative;
@@ -200,21 +214,84 @@
     @extend %flex-center;
     flex-direction: column;
 
+    &::before {
+      content: '活 動 照 片';
+      position: absolute;
+      top: 1.5%;
+      left: 43.5%;
+      font-size: 2rem;
+      color: $color_white;
+    }
+
     @include pad-under-width {
       background-size: contain;
       min-height: 800px;
       max-width: 500px;
       font-size: 1.75rem;
+      &::before {
+        top: 1.2%;
+        left: 45%;
+        font-size: 1.75rem;
+      }
     }
     @include phone-width {
       min-height: 700px;
       padding: 5rem;
-      font-size: 0.85rem;
+      font-size: 0.75rem;
+      &::before {
+        top: 1.5%;
+        left: 45%;
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  &__multimedia-video {
+    min-height: 900px;
+    min-width: 1080px;
+    position: relative;
+    z-index: $z-index_base;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    font-size: 2rem;
+    @extend %flex-center;
+    flex-direction: column;
+
+    &::before {
+      content: '活 動 影 片';
+      position: absolute;
+      top: 1.5%;
+      left: 43.5%;
+      font-size: 2rem;
+      color: $color_white;
+    }
+
+    @include pad-under-width {
+      background-size: contain;
+      min-height: 800px;
+      max-width: 500px;
+      font-size: 1.75rem;
+      &::before {
+        top: 1.2%;
+        left: 45%;
+        font-size: 1.75rem;
+      }
+    }
+    @include phone-width {
+      min-height: 700px;
+      padding: 5rem;
+      font-size: 0.75rem;
+      &::before {
+        top: 1.5%;
+        left: 45%;
+        font-size: 1.5rem;
+      }
     }
   }
 
   &__news-detail {
-    padding: 100px;
+    padding: 90px;
     position: relative;
     z-index: $z-index_base;
     background-repeat: no-repeat;
@@ -225,12 +302,31 @@
     font-size: 1rem;
     @extend %flex-center;
 
+    &::before {
+      content: '最 新 消 息';
+      position: absolute;
+      top: 0%;
+      left: 45%;
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: $color_white;
+    }
+
     @include pad-under-width {
       background-size: cover;
+      &::before {
+        top: 3%;
+      }
     }
+
     @include phone-width {
-      min-height: 550px;
-      width: 100%;
+      min-height: 980px;
+      min-width: 100vw;
+      &::before {
+        top: 1%;
+        left: 45%;
+        font-size: 2rem;
+      }
     }
   }
 

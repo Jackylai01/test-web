@@ -31,7 +31,6 @@ export default function HomePage() {
       <article>
         <main className='main__horizontal'>
           <ContainerBoard
-            title='最新消息'
             titleClassName='news-title'
             contentClassName='content'
           >

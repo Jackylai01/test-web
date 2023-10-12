@@ -15,7 +15,6 @@ const NewsDetailPage: NextPage = () => {
     <>
       <article className='main__container'>
         <ContainerBoard
-          title='最新消息'
           titleClassName='single-news'
           contentClassName='news-detail'
         >

@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 const PreliminaryPage: NextPage = () => {
   const [BackgroundLong, setBackgroundLong] = useState(
-    '/Images/ContainerBoard/board-long.png',
+    '/Images/Multimedia/校園初賽.png',
   );
 
   return (
@@ -13,11 +13,10 @@ const PreliminaryPage: NextPage = () => {
       <main className='multimedia'>
         <article className='multimedia__container'>
           <div
-            className='multimedia__container-preliminary-img'
+            className='multimedia__container-personal-img'
             style={{ backgroundImage: `url(${BackgroundLong})` }}
           >
-            <section className='multimedia__container-preliminary-img--preliminary'>
-              <h2>校園競賽-初賽</h2>
+            <section className='multimedia__container-personal-img--personal'>
               <p>
                 1.參賽資格：就讀本市國小之學生，3人一組，同校組隊競賽，可跨班、跨年級。
               </p>

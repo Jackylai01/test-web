@@ -34,9 +34,8 @@ const VideoPage: NextPage = () => {
     <>
       <article className='main__container'>
         <ContainerBoard
-          title='活動影片'
           className='container-board'
-          contentClassName='multimedia'
+          contentClassName='multimedia-video'
           titleClassName='main-title'
         >
           <ul className='line-list__video'>

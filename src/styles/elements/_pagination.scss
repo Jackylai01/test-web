@@ -5,6 +5,7 @@
 
   @extend %flex-center;
   > button {
+    color: $color_black;
     border: none;
     cursor: pointer;
 

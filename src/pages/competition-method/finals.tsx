@@ -3,19 +3,18 @@ import { useState } from 'react';
 
 const FinalsPage: NextPage = () => {
   const [BackgroundLong, setBackgroundLong] = useState(
-    '/Images/ContainerBoard/board-long.png',
+    '/Images/Multimedia/校園決賽.png',
   );
 
   return (
     <>
       <main className='multimedia'>
         <article className='multimedia__container'>
-          <div
-            className='multimedia__container-preliminary-img'
+          <header
+            className='multimedia__container-personal-img'
             style={{ backgroundImage: `url(${BackgroundLong})` }}
           >
-            <section className='multimedia__container-preliminary-img--preliminary'>
-              <h2>校園競賽-決賽</h2>
+            <section className='multimedia__container-personal-img--personal'>
               <p>1.參賽資格：參與初賽並進入決賽之隊伍。</p>
               <p>2.競賽方式：採線上積分賽。</p>
               <p>3.遊戲時間：暫訂於113年5月1日開始。</p>
@@ -62,7 +61,7 @@ const FinalsPage: NextPage = () => {
                 採不分區積分排名，前5名之隊伍頒發獎金、獎狀及獎盃，詳細說明請參考競賽實施計畫。
               </li>
             </section>
-          </div>
+          </header>
         </article>
       </main>
     </>

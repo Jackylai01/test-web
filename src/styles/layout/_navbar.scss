@@ -38,7 +38,7 @@
 
   &__items {
     display: flex;
-    font-size: clamp(12px, 1.25rem, 20px);
+    font-size: clamp(12px, 1.25rem, 18px);
     gap: 1.5rem;
 
     @include pad-under-width {
@@ -146,12 +146,8 @@
     cursor: pointer;
     font-weight: 600;
 
-    &:hover {
-      text-decoration: underline;
-    }
-
     &-arrow {
-      font-size: 0.25rem;
+      font-size: 10px;
       margin-left: 5px;
     }
   }

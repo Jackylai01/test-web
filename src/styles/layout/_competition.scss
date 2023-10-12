@@ -1,12 +1,15 @@
 .competition {
+  width: 100%;
   position: relative;
-  top: 30px;
-  margin: 0 auto;
-  cursor: pointer;
-  margin-top: 5rem 0rem;
+  margin-top: 5rem;
+
   @extend %flex-center;
 
   > section {
     position: absolute;
+    z-index: 1;
+    flex-direction: column;
+    cursor: pointer;
+    @extend %flex-center;
   }
 }

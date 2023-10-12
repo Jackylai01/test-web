@@ -18,9 +18,8 @@ const GalleryPage: NextPage = () => {
     <>
       <article className='main__container'>
         <ContainerBoard
-          title='活動照片'
           className='container-board'
-          contentClassName='multimedia'
+          contentClassName='multimedia-photo'
           titleClassName='main-title'
         >
           <ul className='line-list__gallery'>

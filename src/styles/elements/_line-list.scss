@@ -3,7 +3,7 @@
   cursor: pointer;
   max-height: calc(100% - 2 * 0px);
   overflow-y: auto;
-
+  font-size: 1.1rem;
   @include phone-width {
     padding: 0px;
   }

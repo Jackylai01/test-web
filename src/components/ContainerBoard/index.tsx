@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 type Props = {
-  title: string;
+  title?: string;
   hint?: string;
   children?: React.ReactNode;
   className?: string;

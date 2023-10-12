@@ -26,6 +26,7 @@
     color: $color_gray;
     font-size: 1.25rem;
     font-weight: 600;
+
     @include phone-width {
       font-size: 1rem;
     }

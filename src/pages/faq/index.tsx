@@ -35,10 +35,8 @@ const QuestionPage: NextPage = () => {
     <>
       <article className='main__horizontal'>
         <ContainerBoard
-          title='常見問題'
           className='container-board-alone'
           contentClassName='faq'
-          titleClassName='main-title'
         >
           <ul className='faq-list'>
             {selectedFaqItems.map(({ question, answer }) => (
