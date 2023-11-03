@@ -1,8 +1,6 @@
 .container-board {
   position: relative;
   margin-bottom: 2rem;
-  min-width: 50%;
-
   @extend %flex-column-center;
 
   &__content {
@@ -53,63 +51,6 @@
     }
   }
 
-  &__single-news {
-    position: absolute;
-    top: 0;
-    transform: translateX(-80%);
-    transform: translateY(0%);
-    z-index: $z-index_base + 1;
-    font-size: 2rem;
-    font-weight: 600;
-    letter-spacing: 5px;
-
-    @media screen and (max-width: 1325px) and (min-width: 1080px) {
-      top: 0;
-      transform: translateY(0%);
-    }
-
-    @include pad-under-width {
-      transform: translateY(30%);
-    }
-    @include phone-width {
-      transform: translateY(30%);
-    }
-  }
-
-  &__main-title {
-    position: absolute;
-    top: 0;
-    transform: translateX(-80%);
-    transform: translateY(10%);
-    z-index: $z-index_base + 1;
-    font-size: 2rem;
-    font-weight: 600;
-    letter-spacing: 5px;
-    color: $color_white;
-    @media screen and (max-width: 1325px) and (min-width: 1080px) {
-      top: 0;
-      font-size: 1.75rem;
-      transform: translateY(100%);
-    }
-
-    @media screen and (max-width: 1080px) and (min-width: 865px) {
-      top: 1%;
-      font-size: 1.75rem;
-      transform: translateY(1%);
-    }
-
-    @include phone-width {
-      top: 0;
-      font-size: 1.5rem;
-      transform: translateY(20%);
-    }
-
-    @include phone-small-width() {
-      font-size: 1.25rem;
-      transform: translateY(100%);
-    }
-  }
-
   &__body {
     position: relative;
     overflow: hidden;
@@ -139,23 +80,274 @@
     position: relative;
     z-index: $z-index_base;
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: top center;
     background-size: contain;
     min-height: 900px;
     max-width: 1080px;
     font-size: 1rem;
     @extend %flex-center;
-
+    flex-direction: column;
+    &::before {
+      position: absolute;
+      color: $color_white;
+      content: '故 事 背 景';
+      top: 0%;
+      left: 45%;
+      font-size: 1.5rem;
+    }
     @include pad-under-width {
       background-size: cover;
       min-height: 800px;
       max-width: 900px;
       padding: 80px;
+
+      &::before {
+        top: 0%;
+        left: 43.5%;
+        font-size: 1.25rem;
+      }
     }
     @include phone-width {
       font-size: 0.75rem;
       min-height: 300px;
       padding: 60px 50px;
+      &::before {
+        top: 0;
+        left: 40%;
+        font-size: 1rem;
+      }
+    }
+    @include phone-small-width {
+      width: 100%;
+      padding: 50px;
+      background-size: cover;
+      background-position: center center;
+
+      &::before {
+        top: 1%;
+        left: 38.5%;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  &__team {
+    position: relative;
+    z-index: $z-index_base;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    font-size: 1rem;
+    padding: 200px;
+    @extend %flex-center;
+    flex-direction: column;
+
+    @include pad-under-width {
+      background-size: cover;
+      min-height: 1440px;
+    }
+
+    &::before {
+      content: '隊 伍 管 理';
+      position: absolute;
+      top: 0.5%;
+      left: 45.5%;
+      font-size: 1.5rem;
+      color: $color_white;
+      @include pad-under-width {
+        font-size: 2rem;
+        top: 1%;
+        left: 45%;
+      }
+      @include phone-width {
+        font-size: 1.5rem;
+        top: 1%;
+        left: 43.5%;
+      }
+    }
+  }
+
+  &__teacher {
+    position: relative;
+    z-index: $z-index_base;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    font-size: 1rem;
+    padding: 200px;
+    min-width: 1080px;
+    flex-direction: column;
+    @extend %flex-center;
+
+    @include pad-under-width {
+      background-size: cover;
+      padding: 80px;
+      min-height: 480px;
+    }
+    &::before {
+      content: '主要聯絡老師';
+      position: absolute;
+      top: 1%;
+      left: 43.5%;
+      font-size: 1.5rem;
+      color: $color_white;
+    }
+  }
+
+  &__room {
+    position: relative;
+    z-index: $z-index_base;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    font-size: 1rem;
+    padding: 200px;
+    min-width: 1080px;
+    flex-direction: column;
+    @extend %flex-center;
+
+    @include pad-under-width {
+      background-size: cover;
+      padding: 80px;
+      min-height: 480px;
+    }
+
+    &::before {
+      content: '建 立 房 間';
+      position: absolute;
+      top: 1%;
+      left: 45%;
+      font-size: 1.5rem;
+      color: $color_white;
+    }
+  }
+
+  &__school {
+    position: relative;
+    z-index: $z-index_base;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    font-size: 1rem;
+    padding: 200px;
+    min-width: 1080px;
+    flex-direction: column;
+    @extend %flex-center;
+
+    @include pad-under-width {
+      background-size: cover;
+      padding: 80px;
+      min-height: 480px;
+    }
+
+    &::before {
+      content: '切 換 學 校';
+      position: absolute;
+      top: 1%;
+      left: 45%;
+      font-size: 1.5rem;
+      color: $color_white;
+    }
+  }
+
+  &__team-list {
+    position: relative;
+    z-index: $z-index_base;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    font-size: 1rem;
+    padding: 200px;
+    min-height: 1080px;
+    min-width: 1440px;
+    @extend %flex-center;
+    flex-direction: column;
+
+    @include pad-under-width {
+      background-size: cover;
+      padding: 100px;
+      min-height: 1440px;
+      min-width: 0px;
+      width: 100vw;
+    }
+    @include phone-width {
+      padding: 20px;
+    }
+
+    &::before {
+      content: '隊伍遊戲紀錄';
+      position: absolute;
+      top: 1%;
+      left: 45%;
+      font-size: 1.5rem;
+      color: $color_white;
+      @include pad-under-width {
+        left: 40%;
+      }
+      @include phone-width {
+        left: 35%;
+      }
+    }
+  }
+  &__team-detail {
+    position: relative;
+    z-index: $z-index_base;
+    background-repeat: no-repeat;
+    background-position: top bottom;
+    background-size: cover;
+    font-size: 1rem;
+    min-width: 1080px;
+    min-height: 680px;
+
+    @extend %flex-center;
+    flex-direction: column;
+
+    @include pad-under-width {
+      background-size: cover;
+      padding: 80px;
+      min-height: 1440px;
+    }
+
+    &::before {
+      content: '遊戲詳情紀錄';
+      position: absolute;
+      top: 1%;
+      left: 43.5%;
+      font-size: 1.5rem;
+      color: $color_white;
+    }
+  }
+
+  &__team-create {
+    position: relative;
+    z-index: $z-index_base;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    font-size: 1rem;
+    flex-direction: column;
+    padding: 100px;
+    min-width: 1440px;
+
+    @extend %flex-center;
+
+    @include pad-under-width {
+      padding: 80px;
+    }
+    @include phone-small-width {
+      min-width: 2400px;
+    }
+    &::before {
+      content: '隊 伍 新 增';
+      position: absolute;
+      top: 1%;
+      left: 45%;
+      font-size: 2rem;
+      color: $color_white;
+
+      @include phone-width {
+        top: 0%;
+      }
     }
   }
 
@@ -210,17 +402,19 @@
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;
-    font-size: 2rem;
     @extend %flex-center;
     flex-direction: column;
 
     &::before {
       content: '活 動 照 片';
       position: absolute;
-      top: 1.5%;
-      left: 43.5%;
-      font-size: 2rem;
+      top: 0;
+      left: 46%;
+      font-size: 1.25rem;
       color: $color_white;
+      @include phone-width {
+        font-size: 1rem;
+      }
     }
 
     @include pad-under-width {
@@ -228,21 +422,11 @@
       min-height: 800px;
       max-width: 500px;
       font-size: 1.75rem;
-      &::before {
-        top: 1.2%;
-        left: 45%;
-        font-size: 1.75rem;
-      }
     }
     @include phone-width {
       min-height: 700px;
       padding: 5rem;
       font-size: 0.75rem;
-      &::before {
-        top: 1.5%;
-        left: 45%;
-        font-size: 1.5rem;
-      }
     }
   }
 
@@ -252,8 +436,8 @@
     position: relative;
     z-index: $z-index_base;
     background-repeat: no-repeat;
-    background-position: center center;
-    background-size: contain;
+    background-position: top center;
+    background-size: cover;
     font-size: 2rem;
     @extend %flex-center;
     flex-direction: column;
@@ -261,7 +445,7 @@
     &::before {
       content: '活 動 影 片';
       position: absolute;
-      top: 1.5%;
+      top: 0;
       left: 43.5%;
       font-size: 2rem;
       color: $color_white;
@@ -273,9 +457,9 @@
       max-width: 500px;
       font-size: 1.75rem;
       &::before {
-        top: 1.2%;
-        left: 45%;
-        font-size: 1.75rem;
+        top: 0;
+        left: 46%;
+        font-size: 1.25rem;
       }
     }
     @include phone-width {
@@ -283,49 +467,9 @@
       padding: 5rem;
       font-size: 0.75rem;
       &::before {
-        top: 1.5%;
-        left: 45%;
-        font-size: 1.5rem;
-      }
-    }
-  }
-
-  &__news-detail {
-    padding: 90px;
-    position: relative;
-    z-index: $z-index_base;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    min-height: 960px;
-    width: 1200px;
-    font-size: 1rem;
-    @extend %flex-center;
-
-    &::before {
-      content: '最 新 消 息';
-      position: absolute;
-      top: 0%;
-      left: 45%;
-      font-size: 1.75rem;
-      font-weight: 600;
-      color: $color_white;
-    }
-
-    @include pad-under-width {
-      background-size: cover;
-      &::before {
-        top: 3%;
-      }
-    }
-
-    @include phone-width {
-      min-height: 980px;
-      min-width: 100vw;
-      &::before {
-        top: 1%;
-        left: 45%;
-        font-size: 2rem;
+        top: 0%;
+        left: 47%;
+        font-size: 1rem;
       }
     }
   }

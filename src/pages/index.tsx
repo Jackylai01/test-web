@@ -37,11 +37,11 @@ export default function HomePage() {
             <ul className='line-list'>
               {displayedNews.map(({ _id, title, createAt }) => (
                 <li key={_id}>
-                  <Link href={`/news/${_id}`}>
-                    <a>
+                  <Link href={`/news/${_id}`} legacyBehavior>
+                    <span>
                       {createAt}
                       {title}
-                    </a>
+                    </span>
                   </Link>
                 </li>
               ))}

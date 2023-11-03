@@ -1,4 +1,3 @@
-import ContainerBoard from '@components/ContainerBoard';
 import { newsList } from '@fixtures/news';
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
@@ -13,18 +12,15 @@ const NewsDetailPage: NextPage = () => {
 
   return (
     <>
-      <article className='main__container'>
-        <ContainerBoard
-          titleClassName='single-news'
-          contentClassName='news-detail'
-        >
+      <article>
+        <main className='news-detail'>
           {newsItem?.body && (
-            <main
-              className='news-body'
+            <section
+              className='news-detail-body'
               dangerouslySetInnerHTML={{ __html: newsItem.body }}
-            ></main>
+            ></section>
           )}
-        </ContainerBoard>
+        </main>
       </article>
     </>
   );

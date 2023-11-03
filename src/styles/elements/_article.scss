@@ -1,4 +1,14 @@
 .article {
+  padding: 150px;
+  @include pad-under-width {
+    padding: 50px;
+  }
+  @include phone-width {
+    padding: 10px;
+  }
+  @include phone-small-width {
+    padding: 0px;
+  }
   > p {
     padding-bottom: $padding_small;
     text-indent: 2em;

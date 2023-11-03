@@ -6,6 +6,9 @@ $color_gray: #808080;
 // 強調色
 $color_accent: #2c45c4;
 $color_accent-light: #6c8ec3;
+$color_accent-blue: rgb(48, 92, 143);
+$color_accent-dark: #6c8ec3;
+$color_danger: #ff4155;
 
 // 輔助色
 $color_auxiliary: #6bcdb2;
@@ -22,11 +25,13 @@ $color_text-accent: #2d2b2b;
 $color_text-color: #535151;
 $color_text-color-light: #ff9900;
 $color_text-color-bold: #755445;
+$color_text: #755445;
 
 // 邊框色彩
 $color_line: #ededed;
 $color_line-light: #008000;
 $color_linear-gradient: #520491;
+
 // 其他色彩
 $color_security: #ff8462;
 
@@ -41,3 +46,4 @@ $background_light: rgb(255, 229, 192);
 $box-shadow_element: 0px 4px 15px rgba(0, 0, 0, 0.4);
 $box-shadow_dropdown: 0 8px 16px rgba(0, 0, 0, 0.2);
 $box-shadow_lists: 0px 3px 6px rgba(0, 0, 0, 0.16);
+$box-shadow_fill: 0px 3px 6px rgba(0, 0, 0, 0.16);

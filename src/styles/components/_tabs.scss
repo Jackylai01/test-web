@@ -1,0 +1,48 @@
+.tabs {
+  flex-wrap: wrap;
+  margin-bottom: $margin_small;
+
+  @extend %flex-row;
+  @include phone-width() {
+    justify-content: center;
+  }
+
+  > li {
+    display: inline-block;
+    padding: $padding_small/2 $padding_small;
+    border: 1px solid $color_text;
+    transition: border-color 500ms;
+
+    @include layoutSpaceLeft();
+
+    > a {
+      transition: color 500ms;
+    }
+
+    &.active {
+      border-color: $color_accent;
+
+      > a {
+        color: $color_accent;
+      }
+    }
+  }
+
+  &--images {
+    margin-bottom: unset;
+
+    > li {
+      padding: unset;
+      border: unset;
+      transition: transform 300ms;
+
+      &.active {
+        transform: scale(1.25);
+      }
+
+      img {
+        height: 50px;
+      }
+    }
+  }
+}

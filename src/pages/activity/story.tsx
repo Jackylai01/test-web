@@ -3,12 +3,7 @@ import type { NextPage } from 'next';
 
 const ActivityStoryPage: NextPage = () => {
   return (
-    <ContainerBoard
-      title='故事背景'
-      className='container-board-alone'
-      contentClassName='story'
-      titleClassName='main-title'
-    >
+    <ContainerBoard contentClassName='story'>
       <article className='article'>
         <p>
           在完成修復「健康之心」之後，英雄們回到實驗室，正準備像海爾斯博士彙報任務完成的好消息，

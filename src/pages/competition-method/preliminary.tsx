@@ -12,11 +12,8 @@ const PreliminaryPage: NextPage = () => {
     <>
       <main className='multimedia'>
         <article className='multimedia__container'>
-          <div
-            className='multimedia__container-personal-img'
-            style={{ backgroundImage: `url(${BackgroundLong})` }}
-          >
-            <section className='multimedia__container-personal-img--personal'>
+          <div className='multimedia__container-preliminary-img'>
+            <section className='multimedia__container-preliminary-img--caption'>
               <p>
                 1.參賽資格：就讀本市國小之學生，3人一組，同校組隊競賽，可跨班、跨年級。
               </p>
@@ -68,8 +65,8 @@ const PreliminaryPage: NextPage = () => {
               <Image
                 src={Preliminary}
                 alt='校園競賽'
-                width='650'
-                height='450'
+                width='500'
+                height='350'
               />
             </section>
           </div>

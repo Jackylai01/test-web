@@ -6,7 +6,7 @@ const ContactPage: NextPage = () => {
   return (
     <>
       <article className='main__horizontal'>
-        <Image src={Contact} alt='聯絡資訊' />
+        <Image src={Contact} alt='聯絡資訊' width={1000} height={550} />
       </article>
       ;
     </>

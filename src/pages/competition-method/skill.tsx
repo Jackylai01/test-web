@@ -6,7 +6,7 @@ const SkillPage: NextPage = () => {
   return (
     <>
       <article className='main__horizontal'>
-        <Image src={Character} alt='角色介紹' />
+        <Image src={Character} alt='角色介紹' width={1000} height={550} />
       </article>
     </>
   );

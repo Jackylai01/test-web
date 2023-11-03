@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 
 type Props = {
   title?: string;
@@ -17,9 +18,20 @@ const ContainerBoard = ({
   contentClassName,
   titleClassName,
 }: Props) => {
-  const [staticImagePath, setStaticImagePath] = useState(
-    '/Images/ContainerBoard/board-web.png',
-  );
+  const defaultImagePath = '/Images/ContainerBoard/board-web.png';
+  const createTeamImagePath = '/Images/ContainerBoard/board-long.png';
+  const [staticImagePath, setStaticImagePath] = useState(createTeamImagePath);
+  const router = useRouter();
+
+  useEffect(() => {
+    if (router.isReady) {
+      if (router.asPath !== '/') {
+        setStaticImagePath(createTeamImagePath);
+      } else {
+        setStaticImagePath(defaultImagePath);
+      }
+    }
+  }, [router.asPath, router.isReady]);
 
   return (
     <main className={`container-board ${className}`}>

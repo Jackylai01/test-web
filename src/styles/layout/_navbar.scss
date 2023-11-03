@@ -1,25 +1,22 @@
 .navbar {
-  padding: 0rem 2rem;
   color: $color_white;
   font-family: 'Noto Sans TC', sans-serif;
   align-items: center;
-
-  @extend %flex-row-between;
+  padding: 1rem;
+  text-align: center;
+  @extend %flex-center;
 
   &__logo {
-    > a {
+    padding-top: 3rem;
+    > span {
       cursor: pointer;
     }
-  }
-
-  &__visits {
-    position: absolute;
-    left: 50px;
   }
 
   &__hamburger {
     display: none;
     cursor: pointer;
+    padding-left: 1rem;
     @include pad-under-width {
       display: block;
     }
@@ -27,13 +24,6 @@
 
   > a {
     margin-top: -15px;
-    .login-image {
-      transition: transform 0.3s;
-
-      &:hover {
-        transform: rotate(-10deg);
-      }
-    }
   }
 
   &__items {
@@ -85,6 +75,7 @@
       color: $color_white;
       transition: background-color 0.3s;
       white-space: nowrap;
+      cursor: pointer;
       &:hover {
         background-color: darken(rgba(0, 0, 0, 0.3), 10%);
         border-radius: 10px;
@@ -169,6 +160,9 @@
       padding-left: 30px;
       color: $color_white;
       margin: 0.75rem 0rem;
+      @include phone-small-width {
+        font-size: 0.5rem;
+      }
     }
 
     &.active {
@@ -201,4 +195,8 @@
   &__campus-finals {
     margin-left: 1.25rem;
   }
+}
+
+.login-image {
+  cursor: pointer;
 }

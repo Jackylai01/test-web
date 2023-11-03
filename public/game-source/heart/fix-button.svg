@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 169.86 72.37">
+    <defs>
+        <style>
+            .cls-1 {
+                isolation: isolate;
+            }
+
+            .cls-2,
+            .cls-8 {
+                fill: #fff;
+            }
+
+            .cls-2 {
+                opacity: 0.2;
+            }
+
+            .cls-3 {
+                fill: url(#linear-gradient);
+            }
+
+            .cls-4 {
+                opacity: 0.5;
+            }
+
+            .cls-5 {
+                fill: url(#linear-gradient-2);
+            }
+
+            .cls-6 {
+                fill: url(#linear-gradient-3);
+            }
+
+            .cls-7 {
+                fill: #6511a3;
+                mix-blend-mode: multiply;
+                opacity: 0.3;
+            }
+
+            .cls-8 {
+                font-size: 31.56px;
+                font-family: MElleHK-Xbold, MElleHK Xbold;
+                font-weight: 700;
+            }
+        </style>
+        <linearGradient id="linear-gradient" x1="84.93" y1="1.01" x2="84.93" y2="70.05" gradientUnits="userSpaceOnUse">
+            <stop offset="0" />
+            <stop offset="1" stop-color="#9aa4a7" />
+        </linearGradient>
+        <linearGradient id="linear-gradient-2" x1="84.93" y1="10.08" x2="84.93" y2="60.71"
+            gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#ffd1ca" />
+            <stop offset="1" stop-color="#ff1c64" />
+        </linearGradient>
+        <linearGradient id="linear-gradient-3" x1="84.93" y1="12.35" x2="84.93" y2="58.37"
+            gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#ff917e" />
+            <stop offset="0.32" stop-color="#ff1c6b" />
+            <stop offset="1" stop-color="#f31bde" />
+        </linearGradient>
+    </defs>
+    <g class="cls-1">
+        <g id="圖層_2" data-name="圖層 2">
+            <g id="圖層_1-2" data-name="圖層 1">
+                <path class="cls-2" d="M35,72.37a35,35,0,1,1,0-70h99.82a35,35,0,1,1,0,70Z" />
+                <path class="cls-3" d="M35,70A35,35,0,0,1,35,0h99.82a35,35,0,1,1,0,70Z" />
+                <path class="cls-4" d="M35,63a25.69,25.69,0,0,1,0-51.37h99.82a25.69,25.69,0,0,1,0,51.37Z" />
+                <path class="cls-5" d="M35,60.7A25.68,25.68,0,0,1,35,9.34h99.82a25.68,25.68,0,1,1,0,51.36Z" />
+                <path class="cls-6"
+                    d="M158.18,35a23.41,23.41,0,0,1-23.34,23.35H35A23.42,23.42,0,0,1,11.67,35h0A23.42,23.42,0,0,1,35,11.67h99.82A23.41,23.41,0,0,1,158.18,35Z" />
+                <path class="cls-7"
+                    d="M158.18,35H11.67A23.42,23.42,0,0,0,35,58.37h99.82A23.41,23.41,0,0,0,158.18,35Z" /><text
+                    class="cls-8" transform="translate(53.15 46.93)">修復</text>
+            </g>
+        </g>
+    </g>
+</svg>

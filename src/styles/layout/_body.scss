@@ -8,4 +8,104 @@ body {
   font-weight: 400;
   font-family: 'Noto Sans TC', sans-serif;
   line-height: 2;
+  overflow-x: hidden;
+}
+
+#__next {
+  position: relative;
+  padding: 40px 0;
+  min-height: 100vh;
+
+  @include phone-width {
+    padding: 20px 0;
+  }
+
+  &::before {
+    top: 0;
+    background-position: bottom center;
+    transform: rotate(180deg);
+  }
+
+  &::after {
+    bottom: 0;
+    background-position: bottom center;
+  }
+}
+
+$title-font-size: (
+  '1': 2em,
+  '2': 1.8em,
+  '3': 1.6em,
+  '4': 1.2em,
+  '5': 1em,
+  '6': 0.85em,
+);
+
+@each $name, $size in $title-font-size {
+  h#{$name} {
+    font-weight: 500;
+    font-size: $size;
+  }
+}
+
+a {
+  color: $color_text;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.margin-top {
+  margin-top: $margin_small;
+
+  &--big {
+    margin-top: $margin_big;
+  }
+}
+
+.margin-bottom {
+  margin-bottom: $margin_small;
+
+  &--big {
+    margin-bottom: $margin_big;
+  }
+}
+
+.margin-left {
+  margin-left: $margin_small;
+
+  &--big {
+    margin-left: $margin_big;
+  }
+}
+
+.margin-right {
+  margin-right: $margin_small;
+
+  &--big {
+    margin-right: $margin_big;
+  }
+}
+
+.text-accent {
+  color: $color_accent;
+
+  &--dark {
+    color: $color_accent-dark;
+  }
+}
+
+.text-auxiliary {
+  color: $color_auxiliary;
+
+  &--light {
+    color: $color_auxiliary-light;
+  }
+}
+
+.text-danger {
+  color: $color_danger !important;
+}
+
+.text-center {
+  text-align: center;
 }

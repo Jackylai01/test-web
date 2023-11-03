@@ -1,22 +1,14 @@
 import GameRule from '@public/Images/Multimedia/Game.png';
 import { NextPage } from 'next';
 import Image from 'next/image';
-import { useState } from 'react';
 
 const PersonalPage: NextPage = () => {
-  const [BackgroundLong, setBackgroundLong] = useState(
-    '/Images/Multimedia/個人戰.png',
-  );
-
   return (
     <>
       <main className='multimedia'>
         <article className='multimedia__container'>
-          <header
-            className='multimedia__container-personal-img'
-            style={{ backgroundImage: `url(${BackgroundLong})` }}
-          >
-            <section className='multimedia__container-personal-img--personal'>
+          <header className='multimedia__container-personal-img'>
+            <section className='multimedia__container-personal-img--caption'>
               <p>
                 1.參賽資格：具有新北市親師生平台之會員，不限年齡與性別皆可參與。
               </p>
@@ -25,7 +17,7 @@ const PersonalPage: NextPage = () => {
                 (每60分鐘累計1次遊戲次數)，累計上限為5次，並每日0時恢復遊戲次數至5次。
               </p>
               <p>
-                3.可於遊戲時間依親師生帳號進入遊戲，積分時間暫訂於112年2月1日至5月31日。
+                3.可於遊戲時間依親師生帳號進入遊戲，積分時間暫訂於113年2月1日至5月31日。
               </p>
               <p>4.玩家可控制１隻角色，並自行選擇挑戰題型。</p>
               <p>
@@ -52,7 +44,7 @@ const PersonalPage: NextPage = () => {
                 11.為鼓勵國小學生參賽，特加開國小學生個人賽計分賽，說明請參考下表：
               </p>
               <span>
-                <p>競賽日期：113年2月1日至113年4月14日止。</p>
+                <p>競賽日期：2024年2月1日至2024年4月14日止。</p>
                 <p>
                   12.參賽資格：活動期間就讀於新北市國小1至6年級學生，透過親師生平台帳號進行遊戲。
                 </p>

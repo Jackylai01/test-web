@@ -41,10 +41,10 @@ const VideoPage: NextPage = () => {
           <ul className='line-list__video'>
             {videoLists.map((items) => (
               <li key={items.title}>
-                <Link href={items.href} passHref>
-                  <a target='_blank' rel='noopener noreferrer'>
+                <Link href={items.href} target='_blank' passHref legacyBehavior>
+                  <span rel='noopener noreferrer'>
                     <h3>{items.title}</h3>
-                  </a>
+                  </span>
                 </Link>
               </li>
             ))}

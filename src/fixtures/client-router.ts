@@ -15,6 +15,7 @@ export const clientRoutes: Routes = [
       { title: '角色介紹', href: '/activity/character' },
     ],
   },
+
   {
     title: '競賽辦法',
     href: '/',
@@ -34,6 +35,7 @@ export const clientRoutes: Routes = [
       // { title: '活動好康', href: '/offers' },
     ],
   },
+  { title: '網路競賽', href: '/competition' },
   {
     title: '影音專區',
     href: '/',
@@ -44,9 +46,9 @@ export const clientRoutes: Routes = [
     ],
   },
   { title: '下載專區', href: '/download' },
-  { title: '登島資訊', href: '/' },
-  { title: '網路競賽', href: '/competition' },
+  // // { title: '登島資訊', href: '/' },
+
   { title: '常見問題', href: '/faq' },
   { title: '聯絡我們', href: '/contact' },
-  { title: '兌換獎品', href: '/' },
+  // { title: '兌換獎品', href: '/' },
 ];

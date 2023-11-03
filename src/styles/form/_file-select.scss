@@ -1,0 +1,51 @@
+$width_file-select: 400px;
+
+.file-select {
+  max-width: $width_file-select;
+  width: 100%;
+  text-align: center;
+
+  &__container {
+    border: 1px solid $color_accent;
+
+    aspect-ratio: 16 / 9;
+    @extend %flex-center;
+
+    > span[class^='icomoon-'] {
+      font-size: 4rem;
+    }
+  }
+
+  &__img {
+    max-width: 100%;
+    max-height: 100%;
+
+    object-fit: contain;
+  }
+
+  &__input {
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+
+  &__footer {
+    width: 100%;
+
+    @extend %flex-row;
+
+    > a {
+      flex: 1;
+      height: 40px;
+      border: 1px solid $color_accent;
+      border-top: unset;
+
+      @extend %flex-center;
+
+      &:first-child {
+        border-right: unset;
+      }
+    }
+  }
+}

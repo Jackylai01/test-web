@@ -25,10 +25,10 @@ const GalleryPage: NextPage = () => {
           <ul className='line-list__gallery'>
             {galleryLists.map((items) => (
               <li key={items.title}>
-                <Link href={items.href}>
-                  <a target='_blank' rel='noopener noreferrer'>
+                <Link href={items.href} target='_blank' legacyBehavior>
+                  <span rel='noopener noreferrer'>
                     <h3>{items.title}</h3>
-                  </a>
+                  </span>
                 </Link>
               </li>
             ))}

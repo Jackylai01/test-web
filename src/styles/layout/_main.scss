@@ -51,4 +51,18 @@
       flex-direction: column;
     }
   }
+
+  &__caption {
+    font-size: 1.25rem;
+    color: $color_white;
+    flex-direction: column;
+    min-height: 400px;
+    @extend %flex-center;
+    @include phone-small-width() {
+      font-size: 1rem;
+    }
+    > a {
+      font-size: 2rem;
+    }
+  }
 }

@@ -20,6 +20,7 @@
 // // // 組件
 @import 'components/carousel';
 @import 'components/image-container.scss';
+@import 'components/modal';
 
 // // // 元素(elements)樣式撰寫
 @import 'elements/container-board';
@@ -28,6 +29,8 @@
 @import 'elements/article';
 @import 'elements/faq-list';
 @import 'elements/news-body';
+@import 'elements/btn';
+@import 'elements/loader';
 
 // // // 佔用區塊(Placeholder)樣式設置
 @import 'placeholder/flex-element';
@@ -44,9 +47,15 @@
 @import 'layout/navbar';
 @import 'layout/competition';
 @import 'layout/multimedia';
+@import 'layout/news';
+@import 'layout/faq';
 
 // // // 格線(Grid)配置撰寫
 @import 'grid/grid';
+
+// // // 表單元件
+@import 'form/file-select';
+@import 'form/form';
 
 // // // 元素(Elements)樣式撰寫
 @import 'elements/btn';

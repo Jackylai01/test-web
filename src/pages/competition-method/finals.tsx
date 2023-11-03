@@ -1,20 +1,12 @@
 import { NextPage } from 'next';
-import { useState } from 'react';
 
 const FinalsPage: NextPage = () => {
-  const [BackgroundLong, setBackgroundLong] = useState(
-    '/Images/Multimedia/校園決賽.png',
-  );
-
   return (
     <>
       <main className='multimedia'>
         <article className='multimedia__container'>
-          <header
-            className='multimedia__container-personal-img'
-            style={{ backgroundImage: `url(${BackgroundLong})` }}
-          >
-            <section className='multimedia__container-personal-img--personal'>
+          <header className='multimedia__container-finals-img'>
+            <section className='multimedia__container-finals-img--caption'>
               <p>1.參賽資格：參與初賽並進入決賽之隊伍。</p>
               <p>2.競賽方式：採線上積分賽。</p>
               <p>3.遊戲時間：暫訂於113年5月1日開始。</p>

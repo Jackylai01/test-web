@@ -1,0 +1,40 @@
+.character-list {
+  flex-wrap: wrap;
+
+  @extend %flex-row;
+
+  > li {
+    flex: 1 33.33%;
+    margin: auto;
+    min-width: 220px;
+    max-width: 33.33%;
+
+    @extend %flex-column;
+
+    > img {
+      width: 100%;
+    }
+  }
+
+  &--detail {
+    > li {
+      > img {
+        &:last-child {
+          padding-left: $padding_small;
+          width: 88%;
+        }
+      }
+    }
+  }
+
+  &--villain {
+    margin: $margin_base;
+
+    > li {
+      flex: unset;
+      max-width: 600px;
+
+      @include layoutSpaceBottom($padding_base);
+    }
+  }
+}

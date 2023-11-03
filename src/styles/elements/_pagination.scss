@@ -12,5 +12,8 @@
     @include phone-width {
       font-size: clamp(6px, 0.25rem, 8px);
     }
+    @include phone-small-width {
+      padding: 0.15rem;
+    }
   }
 }

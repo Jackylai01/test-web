@@ -1,0 +1,233 @@
+.team-management {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
+.team-list {
+  > li {
+    display: flex;
+
+    &:not(.team-list__header) {
+      border: $color_accent-dark solid 1px;
+
+      @include layoutSpaceBottom($margin_small);
+    }
+
+    > span {
+      display: inline-flex;
+      align-items: center;
+      flex: 2 0px;
+      justify-content: space-between;
+      padding: $padding_small;
+
+      &:nth-child(3) {
+        flex: 4 0px;
+      }
+    }
+    @include phone-width {
+      font-size: 0.85rem;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    word-break: keep-all;
+
+    > a {
+      margin-left: 20px;
+    }
+  }
+
+  &--no-container {
+    height: 200px;
+    border: $color_accent solid 1px;
+    opacity: 0.5;
+
+    @extend %flex-center;
+  }
+}
+
+.links-container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  @include phone-width {
+    gap: 0px;
+  }
+}
+
+.team-info {
+  padding: $padding_small;
+  font-size: 1.2em;
+  @include phone-width {
+    width: 100%;
+  }
+}
+
+.team-form {
+  width: 50%;
+
+  @include pad-under-width {
+    width: auto;
+  }
+  @include phone-width {
+    width: 25%;
+  }
+
+  input,
+  select {
+    padding: 14px 20px;
+    background-color: $color_white;
+    color: $color_black;
+    font-size: 1em;
+    border-radius: 8px;
+    border: none;
+    box-shadow: $box-shadow_dropdown;
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+
+    > label {
+      margin-bottom: 7px;
+      font-size: 0.9em;
+    }
+    @include phone-width {
+      width: 100%;
+    }
+  }
+
+  &__select {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      top: 24px;
+      right: 20px;
+      content: '';
+      transition: transform 300ms;
+      transform: rotate(180deg);
+
+      @extend %triangle_top;
+    }
+
+    > span {
+      display: block;
+      padding: 14px 20px;
+      border: $color_black solid 1px;
+      background-color: transparent;
+      cursor: pointer;
+    }
+
+    > ul {
+      position: absolute;
+      top: calc(100% + 10px);
+      visibility: hidden;
+      overflow: auto;
+      box-sizing: border-box;
+      max-height: 280px;
+      width: 100%;
+      border: $color_accent solid 1px;
+      background-color: $color_black;
+      color: $color_white;
+      opacity: 0;
+      transition: 300ms;
+      z-index: 5;
+      > li {
+        padding: 10px 20px;
+        cursor: pointer;
+
+        &:nth-child(1) {
+          position: sticky;
+          top: 0;
+
+          input {
+            width: calc(100% - 42px);
+          }
+        }
+      }
+    }
+
+    &.active {
+      &::before {
+        transform: none;
+      }
+      > ul {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+
+  &__select-create {
+    display: flex;
+    align-items: stretch;
+
+    select {
+      flex: 1;
+      margin-right: 10px;
+    }
+  }
+}
+
+.margin-bottom {
+  @include pad-under-width {
+    margin-top: 5rem;
+  }
+  @include phone-width {
+    margin-top: 3rem;
+    padding: 5px;
+  }
+}
+
+.team-caption {
+  @include phone-width {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0.75rem;
+    padding-left: 1rem;
+  }
+}
+
+.team-game {
+  width: 50%;
+  @extend %flex-center;
+
+  &__header {
+    span {
+      margin: 1rem;
+    }
+  }
+}
+
+.team-record {
+  > li {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0rem;
+    border: $color_accent-dark solid 2px;
+    border-radius: 8px;
+    > span {
+      display: inline-flex;
+      align-items: center;
+      flex: 2 0px;
+      justify-content: space-between;
+      padding: $padding_small;
+
+      &:nth-child(3) {
+        flex: 4 0px;
+      }
+    }
+    @include phone-width {
+      font-size: 0.85rem;
+    }
+  }
+}
