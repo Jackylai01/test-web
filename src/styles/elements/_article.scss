@@ -1,5 +1,6 @@
 .article {
   padding: 150px;
+  font-size: 18px;
   @include pad-under-width {
     padding: 50px;
   }

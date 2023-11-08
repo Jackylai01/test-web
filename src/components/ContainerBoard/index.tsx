@@ -18,7 +18,7 @@ const ContainerBoard = ({
   contentClassName,
   titleClassName,
 }: Props) => {
-  const defaultImagePath = '/Images/ContainerBoard/board-web.png';
+  const defaultImagePath = '/Images/ContainerBoard/最新消息.png';
   const createTeamImagePath = '/Images/ContainerBoard/board-long.png';
   const [staticImagePath, setStaticImagePath] = useState(createTeamImagePath);
   const router = useRouter();

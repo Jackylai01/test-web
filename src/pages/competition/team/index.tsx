@@ -45,7 +45,7 @@ const CompetitionTeamListPage: NextPage = () => {
     <LoadingLayout
       isLoading={gameInfoLoading || schoolTeamLoading || teamRemoveLoading}
     >
-      <article className='main__container'>
+      <article>
         <ContainerBoard contentClassName='team'>
           <ul className='links-container'>
             <Link href='/competition/school' className='btn margin-bottom'>
@@ -57,12 +57,12 @@ const CompetitionTeamListPage: NextPage = () => {
             >
               {schoolTeam?.mainTeacherName ? '修改' : '新增'}主要聯絡老師
             </Link>
-            <Link
+            {/* <Link
               href='/competition/create-room'
               className='btn margin-left margin-bottom'
             >
               建立房間
-            </Link>
+            </Link> */}
           </ul>
 
           <ul className='team-info'>

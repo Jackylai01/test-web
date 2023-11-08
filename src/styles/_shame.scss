@@ -1,5 +1,5 @@
 .team-management {
-  font-size: 1.15rem;
+  font-size: 1rem;
   font-weight: 600;
   margin-left: 1rem;
   cursor: pointer;
@@ -26,8 +26,8 @@
         flex: 4 0px;
       }
     }
-    @include phone-width {
-      font-size: 0.85rem;
+    @include pad-under-width {
+      font-size: 0.8rem;
     }
   }
 
@@ -55,7 +55,9 @@
   display: flex;
   justify-content: flex-start;
   gap: 10px;
+
   @include phone-width {
+    width: 100%;
     gap: 0px;
   }
 }
@@ -63,13 +65,16 @@
 .team-info {
   padding: $padding_small;
   font-size: 1.2em;
+  @include pad-under-width {
+    font-size: 0.85em;
+  }
   @include phone-width {
     width: 100%;
   }
 }
 
 .team-form {
-  width: 50%;
+  width: 100%;
 
   @include pad-under-width {
     width: auto;

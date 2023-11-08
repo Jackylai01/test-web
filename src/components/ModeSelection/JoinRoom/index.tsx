@@ -45,7 +45,7 @@ const JoinRoom = () => {
   return (
     <LoadingLayout isLoading={!!roomId}>
       <div style={{ margin: '10%' }}>
-        <ContainerBoard title='加入房間'>
+        <ContainerBoard contentClassName='join-room'>
           <Form
             fieldConfigs={[
               {

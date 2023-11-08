@@ -11,6 +11,13 @@
 
   @extend %inline-flex-center;
 
+  @include pad-under-width {
+    padding: 7.5px;
+  }
+  @include phone-width {
+    padding: 5px;
+  }
+
   &:hover {
     background-color: rgba($color: $color_white, $alpha: 0.5);
     color: $color_black;
@@ -32,6 +39,13 @@
     display: block;
     text-align: center;
     background-color: $color_line-light;
+    font-size: 1rem;
+    @include pad-under-width {
+      padding: 1rem;
+    }
+    @include phone-width {
+      padding: 0.2rem;
+    }
   }
 
   &--opacity {

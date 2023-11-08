@@ -8,6 +8,14 @@ const nextConfig = {
           source: '/api/:path*',
           destination: `http://localhost:3001/:path*`,
         },
+        {
+          source: '/authorize',
+          destination: `http://localhost:3001/auth/authorize`,
+        },
+        {
+          source: '/callback',
+          destination: `http://localhost:3001/auth/callback`,
+        },
       ],
     };
   },

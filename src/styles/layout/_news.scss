@@ -1,61 +1,58 @@
 .news-detail {
   position: relative;
-  background-size: contain;
-  background-position: center center;
+  background-size: cover;
+  background-position: top center;
   background-repeat: no-repeat;
   background-image: url('../../../public/Images/News/board-width最新消息.png');
+  height: 100vh;
   width: 100%;
-  height: 80vh;
+  min-height: 1080px;
 
   @media (orientation: landscape) and (max-width: 915px) {
     width: 100vw;
     min-height: 90vh;
   }
 
-  @include pad-under-width {
-    height: 50vh;
-  }
-
   @include phone-width {
+    background-position: center;
     background-image: url('../../../public/Images/News/board-long最新消息.png');
-    height: 60vh;
-  }
-
-  @include phone-small-width {
-    max-height: 100vh;
+    min-height: 1080px;
   }
 
   &-body {
     width: 50%;
+    height: 60vh;
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 50vh;
     overflow: auto;
-    z-index: 2;
-    font-size: clamp(10px, 1.5vw, 18px);
+    font-size: 1rem;
     scrollbar-width: thin;
     scrollbar-color: #888;
+    z-index: 2;
 
     @media (orientation: landscape) and (max-width: 915px) {
       min-height: 50vh;
+      width: 100%;
     }
 
     @include pad-under-width {
-      padding: 10px;
-      height: 30vh;
+      top: 50%;
+      width: 90%;
+      height: 60vh;
     }
 
     @include phone-width {
-      width: 80%;
-      height: 45vh;
+      width: 100%;
+      height: 70vh;
       padding: 30px;
+      font-size: 0.85rem;
+      top: 40%;
     }
 
     @include phone-small-width {
       width: 100%;
-      max-height: 40vh;
       padding: 50px;
     }
 
@@ -70,6 +67,14 @@
       &:hover {
         background-color: #555;
       }
+    }
+  }
+
+  &-photos {
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
     }
   }
 }

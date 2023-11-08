@@ -25,7 +25,7 @@ const CompetitionGamePage: NextPage = () => {
   }, [dispatch]);
 
   return (
-    <main className='game-main'>
+    <main>
       <Link className='btn btn--border game-main__back' href='/competition'>
         上一頁
       </Link>

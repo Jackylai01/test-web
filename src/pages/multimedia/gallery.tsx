@@ -1,19 +1,15 @@
 import ContainerBoard from '@components/ContainerBoard';
-import { NextPage } from 'next';
+import { Activity } from '@models/entities/activity/activity';
+import { apiPublicListActivities } from '@services/public/activity/public-activity';
+import { ApiPaginationResult } from '@services/shared/api';
+import { GetServerSideProps, NextPage } from 'next';
 import Link from 'next/link';
 
-const galleryLists = [
-  {
-    title: '【112年新北市健康識能競賽】決賽照片',
-    href: 'https://drive.google.com/drive/folders/1bD8DKhJXYnCRIXIhvLxeZLl07VvYy2r9',
-  },
-  {
-    title: '【109年新北市健康識能競賽】決賽照片',
-    href: 'https://photos.google.com/share/AF1QipPaeg9KNv-H3lgJslwPAIu96Zh4SN9MS8BLNhRotzC5ZX-kw6tkhj98BQI9Dcn4yg?key=YzVGQmFLMWU3MkQzSzl6NTRObWRlZWE1dDhCRG1B',
-  },
-];
+type Props = {
+  activityList: ApiPaginationResult<Activity>;
+};
 
-const GalleryPage: NextPage = () => {
+const GalleryPage: NextPage<Props> = ({ activityList }) => {
   return (
     <>
       <article className='main__container'>
@@ -23,11 +19,11 @@ const GalleryPage: NextPage = () => {
           titleClassName='main-title'
         >
           <ul className='line-list__gallery'>
-            {galleryLists.map((items) => (
-              <li key={items.title}>
-                <Link href={items.href} target='_blank' legacyBehavior>
+            {activityList?.data.map((activity) => (
+              <li key={activity.title}>
+                <Link href={activity.link} target='_blank' legacyBehavior>
                   <span rel='noopener noreferrer'>
-                    <h3>{items.title}</h3>
+                    <h3>{activity.title}</h3>
                   </span>
                 </Link>
               </li>
@@ -37,6 +33,11 @@ const GalleryPage: NextPage = () => {
       </article>
     </>
   );
+};
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const { result: activityList } = await apiPublicListActivities();
+  return { props: { activityList } };
 };
 
 export default GalleryPage;

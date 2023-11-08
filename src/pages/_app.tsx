@@ -6,7 +6,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { Provider } from 'react-redux';
 
-const MyApp = ({ Component, pageProps }: AppProps) => {
+const MyApp = ({ Component, ...pageProps }: AppProps) => {
   const router = useRouter();
   const { store, props } = wrapper.useWrappedStore(pageProps);
 
@@ -27,11 +27,11 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     <>
       <Provider store={store}>
         <Head>
-          <title>2024 新北小學堂電競王</title>
+          <title>新北電競王 - 夢幻果島大冒險</title>
           <meta
             name='viewport'
-            content='width=device-width, initial-scale=1'
-          ></meta>
+            content='width=device-width, initial-scale=0.5'
+          />
         </Head>
         {/* {showCarousel && <Carousel />} */}
         <Layout>

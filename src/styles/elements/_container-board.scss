@@ -11,43 +11,27 @@
     background-position: center center;
     background-size: cover;
     width: 100%;
-    min-height: 750px;
-    min-width: 860px;
 
-    &::before {
-      content: '最 新 消 息';
-      position: absolute;
-      left: 43%;
-      font-size: 1.5rem;
-      color: $color_white;
+    @media (orientation: landscape) and (max-width: 1440px) {
+      background-position: top center;
     }
 
     @include pad-under-width {
+      background-position: top center;
       min-height: 700px;
       min-width: 800px;
-
-      &::before {
-        content: '最新消息';
-        position: absolute;
-        left: 45%;
-        font-size: 1.5rem;
-      }
     }
 
     @include phone-width {
-      width: 100vw;
+      width: 100%;
       min-width: 0;
       min-height: 500px;
       display: flex;
       align-items: center;
       justify-content: center;
-
-      &::before {
-        content: '最新消息';
-        top: 1%;
-        left: 42%;
-        font-size: 1.25rem;
-      }
+    }
+    @include phone-small-width {
+      min-height: 600px;
     }
   }
 
@@ -84,7 +68,7 @@
     background-size: contain;
     min-height: 900px;
     max-width: 1080px;
-    font-size: 1rem;
+
     @extend %flex-center;
     flex-direction: column;
     &::before {
@@ -93,7 +77,7 @@
       content: '故 事 背 景';
       top: 0%;
       left: 45%;
-      font-size: 1.5rem;
+      font-size: 24px;
     }
     @include pad-under-width {
       background-size: cover;
@@ -131,20 +115,60 @@
     }
   }
 
+  &__join-room {
+    width: 100%;
+    position: relative;
+    z-index: $z-index_base;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    font-size: 16px;
+    padding: 200px;
+
+    &::before {
+      content: '加 入 房 間';
+      position: absolute;
+      top: 0%;
+      left: 43%;
+      font-size: 18px;
+      color: $color_white;
+    }
+
+    @include pad-under-width {
+      background-size: contain;
+      background-position: center center;
+      padding: 120px;
+      &::before {
+        content: '加 入 房 間';
+        position: absolute;
+        top: 0%;
+        left: 43%;
+        font-size: 12px;
+        color: $color_white;
+      }
+    }
+  }
   &__team {
     position: relative;
     z-index: $z-index_base;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;
-    font-size: 1rem;
+    font-size: 16px;
     padding: 200px;
+
     @extend %flex-center;
     flex-direction: column;
 
     @include pad-under-width {
       background-size: cover;
-      min-height: 1440px;
+      min-height: 1640px;
+      font-size: 1.25rem;
+      padding: 100px;
+    }
+
+    @include phone-width {
+      font-size: 1rem;
     }
 
     &::before {
@@ -152,17 +176,17 @@
       position: absolute;
       top: 0.5%;
       left: 45.5%;
-      font-size: 1.5rem;
+      font-size: 22px;
       color: $color_white;
       @include pad-under-width {
-        font-size: 2rem;
         top: 1%;
-        left: 45%;
+        left: 38.5%;
+        font-size: 38px;
       }
       @include phone-width {
-        font-size: 1.5rem;
         top: 1%;
-        left: 43.5%;
+        left: 42.5%;
+        font-size: 22px;
       }
     }
   }
@@ -189,7 +213,7 @@
       position: absolute;
       top: 1%;
       left: 43.5%;
-      font-size: 1.5rem;
+      font-size: 24px;
       color: $color_white;
     }
   }
@@ -245,7 +269,7 @@
       position: absolute;
       top: 1%;
       left: 45%;
-      font-size: 1.5rem;
+      font-size: 24px;
       color: $color_white;
     }
   }
@@ -279,7 +303,7 @@
       position: absolute;
       top: 1%;
       left: 45%;
-      font-size: 1.5rem;
+      font-size: 24px;
       color: $color_white;
       @include pad-under-width {
         left: 40%;
@@ -313,7 +337,7 @@
       position: absolute;
       top: 1%;
       left: 43.5%;
-      font-size: 1.5rem;
+      font-size: 24px;
       color: $color_white;
     }
   }
@@ -342,7 +366,7 @@
       position: absolute;
       top: 1%;
       left: 45%;
-      font-size: 2rem;
+      font-size: 32px;
       color: $color_white;
 
       @include phone-width {
@@ -410,10 +434,11 @@
       position: absolute;
       top: 0;
       left: 46%;
-      font-size: 1.25rem;
+      font-size: 20px;
       color: $color_white;
+
       @include phone-width {
-        font-size: 1rem;
+        font-size: 16px;
       }
     }
 
@@ -427,6 +452,9 @@
       min-height: 700px;
       padding: 5rem;
       font-size: 0.75rem;
+    }
+    @include phone-small-width {
+      max-width: 0px;
     }
   }
 
@@ -437,8 +465,9 @@
     z-index: $z-index_base;
     background-repeat: no-repeat;
     background-position: top center;
-    background-size: cover;
-    font-size: 2rem;
+    background-size: contain;
+    font-size: 16px;
+    padding: 100px;
     @extend %flex-center;
     flex-direction: column;
 
@@ -446,29 +475,30 @@
       content: '活 動 影 片';
       position: absolute;
       top: 0;
-      left: 43.5%;
-      font-size: 2rem;
+      left: 45%;
+      font-size: 22px;
       color: $color_white;
     }
 
     @include pad-under-width {
-      background-size: contain;
+      background-size: cover;
       min-height: 800px;
       max-width: 500px;
-      font-size: 1.75rem;
+
       &::before {
         top: 0;
-        left: 46%;
-        font-size: 1.25rem;
+        left: 43.5%;
+        font-size: 28px;
       }
     }
     @include phone-width {
-      min-height: 700px;
+      min-height: 680px;
       padding: 5rem;
-      font-size: 0.75rem;
+      background-size: cover;
+
       &::before {
-        top: 0%;
-        left: 47%;
+        top: 0.5%;
+        left: 45%;
         font-size: 1rem;
       }
     }

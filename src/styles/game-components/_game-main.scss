@@ -1,0 +1,268 @@
+.game-main {
+  z-index: $z-index_front;
+  display: block;
+  overflow: auto;
+  background-color: $color_white;
+
+  @extend %fixed-layout_full;
+
+  &--linear-background {
+    background-image: linear-gradient(to right, #964bfb, #c9368f, #964bfb);
+  }
+
+  &--linear-background-blue {
+    background-image: linear-gradient(to right, #30c7fd, #5652fe, #30c7fd);
+  }
+
+  &--linear-background-cyan {
+    background-image: linear-gradient(to right, #6de0fb, #8899ff, #6de0fb);
+  }
+
+  &::before {
+    position: fixed;
+    z-index: $z-index_cover;
+    display: none;
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: $color_primary;
+    content: '請使用橫式螢幕進行遊戲';
+    text-align: center;
+    font-size: 2.3rem;
+
+    @include phone-width() {
+      display: flex;
+    }
+    @extend %flex-center;
+    @extend %full-pseudo-element;
+  }
+
+  &__container {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    min-height: 100vh;
+
+    &--border {
+      z-index: 0;
+      box-sizing: border-box;
+      margin: 20px 40px;
+      min-height: calc(100vh - 40px);
+      border-right: 6px solid #fd8174;
+      border-left: 6px solid #fd8174;
+      border-radius: 30px;
+      background-image: linear-gradient(
+        to right,
+        #ff4eb5,
+        #ff342d,
+        #c1379e,
+        #ff342d,
+        #ff4eb5
+      );
+
+      &::before {
+        z-index: -1;
+        margin: 20px;
+        width: calc(100% - 40px);
+        height: calc(100% - 40px);
+        border-radius: 30px;
+        background-image: url('../../../public/game-source/background/select-background.png');
+        background-attachment: fixed;
+        background-position: center -50px;
+        background-size: cover;
+
+        @extend %full-pseudo-element;
+      }
+
+      &::after {
+        width: calc(100% - 40px);
+        background-image: url('../../../public/game-source/background/light-mask.png');
+        background-position: center -50px;
+        background-size: 100%;
+        pointer-events: none;
+
+        mix-blend-mode: lighten;
+        @extend %full-pseudo-element;
+      }
+
+      &-pure-bg {
+        &::before {
+          background-image: url('../../../public/game-source/background/pure-background.png');
+          background-position: center -50px;
+          background-size: cover;
+        }
+      }
+
+      &-heart-bg {
+        &::before {
+          background-image: url('../../../public/game-source/background/heart-background.jpg');
+          background-position: center -50px;
+          background-size: cover;
+        }
+
+        &::after {
+          background-image: unset;
+        }
+      }
+    }
+
+    &--border-mask {
+      &::after {
+        top: -20px;
+        left: -45px;
+        width: 100vw;
+        height: 100vh;
+        background-image: url('../../../public/game-source/background/mask.svg');
+        background-position: center;
+        background-size: 125%;
+        pointer-events: none;
+
+        mix-blend-mode: overlay;
+        @extend %full-pseudo-element;
+      }
+    }
+
+    &--border-blue {
+      z-index: 0;
+      box-sizing: border-box;
+      margin: 20px 40px;
+      min-height: calc(100vh - 40px);
+      border-right: 6px solid #dd64ff;
+      border-left: 6px solid #dd64ff;
+      border-radius: 30px;
+      background-image: linear-gradient(
+        to right,
+        #4b22ff,
+        #8c07ff,
+        #4e5efe,
+        #8c07ff,
+        #4b22ff
+      );
+
+      &::before {
+        z-index: -1;
+        margin: 20px;
+        width: calc(100% - 40px);
+        height: calc(100% - 40px);
+        border-radius: 30px;
+        background-image: url('../../../public/game-source/background/character-background.png');
+        background-attachment: fixed;
+        background-position: center -50px;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        @extend %full-pseudo-element;
+      }
+    }
+
+    &--border-cyan {
+      z-index: 0;
+      box-sizing: border-box;
+      margin: 20px 40px;
+      min-height: calc(100vh - 40px);
+      border-right: 6px solid #cd89ff;
+      border-left: 6px solid #cd89ff;
+      border-radius: 30px;
+      background-image: linear-gradient(
+        to right,
+        #7d71ff,
+        #a55bff,
+        #8899fe,
+        #a55bff,
+        #7d71ff
+      );
+
+      &::before {
+        z-index: -1;
+        margin: 20px;
+        width: calc(100% - 40px);
+        height: calc(100% - 40px);
+        border-radius: 30px;
+        background-image: url('../../../public/game-source/background/rank-background.jpg');
+        background-attachment: fixed;
+        background-position: center -50px;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        @extend %full-pseudo-element;
+      }
+    }
+  }
+
+  &__back {
+    position: absolute;
+    top: 60px;
+    left: 60px;
+    z-index: 100;
+  }
+
+  &__final {
+    position: absolute;
+    top: 60px;
+    left: 200px;
+    z-index: 100;
+  }
+
+  &__select-mode,
+  &__select-page {
+    position: absolute;
+
+    > li {
+      width: 50%;
+      height: 100%;
+
+      a {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  &__select-mode {
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    @extend %flex-center;
+  }
+
+  &__select-page {
+    bottom: 0;
+    display: flex;
+    overflow: hidden;
+    border-radius: 50%;
+    transform: translateY(50%);
+  }
+
+  &__completion-tips {
+    position: absolute;
+    bottom: 20%;
+    width: 560px;
+
+    @extend %flex-center;
+
+    > img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__completion-cleans {
+    position: absolute;
+    top: 155px;
+    display: flex;
+    flex-direction: column;
+    height: 84px;
+
+    > li {
+      display: inline-flex;
+      margin-bottom: 6px;
+      height: 22px;
+
+      img {
+        width: auto;
+        height: 22px;
+      }
+    }
+  }
+}

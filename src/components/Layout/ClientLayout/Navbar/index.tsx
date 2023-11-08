@@ -3,6 +3,8 @@ import { SSO_URL } from '@fixtures/constants';
 import Logo from '@public/Images/Logo/LOGO.png';
 import NavbarIcon from '@public/Images/Navbar/Navbar-icon.png';
 import Login from '@public/Images/Navbar/login.png';
+import StartGame from '@public/Images/Navbar/開始遊戲.png';
+import TeamManage from '@public/Images/Navbar/隊伍管理.png';
 import { publicViewsDataAsync } from '@reducers/public/views/actions';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -132,12 +134,30 @@ const Navbar = () => {
       </main>
 
       {user ? (
-        <Link href='/competition/team' legacyBehavior>
-          <span className='team-management'>隊伍管理</span>
-        </Link>
+        user.isTeacher ? (
+          <Link href='/competition/team' legacyBehavior>
+            <Image
+              src={TeamManage}
+              className='login-image'
+              alt='隊伍管理'
+              width={200}
+              height={100}
+            />
+          </Link>
+        ) : (
+          <Link href='/competition/game' legacyBehavior>
+            <Image
+              src={StartGame}
+              alt='開始遊戲'
+              className='login-image'
+              width={200}
+              height={100}
+            />
+          </Link>
+        )
       ) : (
         <Link href={SSO_URL} legacyBehavior>
-          <Image className='login-image' src={Login} alt='login-button' />
+          <Image src={Login} alt='登入按鈕' className='login-image' />
         </Link>
       )}
 

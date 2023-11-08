@@ -9,6 +9,18 @@ body {
   font-family: 'Noto Sans TC', sans-serif;
   line-height: 2;
   overflow-x: hidden;
+
+  @media (orientation: landscape) and (max-width: 1080px) {
+    background-image: url('../../../public/Images/Background/平板背景.png');
+  }
+
+  @include Lpc-width {
+    background-image: url('../../../public/Images/Background/平板背景.png');
+  }
+
+  @include pad-width {
+    background-image: url('../../../public/Images/Background/平板背景.png');
+  }
 }
 
 #__next {
